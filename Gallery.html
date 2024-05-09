@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthy Nutrition Website: Gallery Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <div id="main">
+        <div id="header">
+            <h1>Healthy Nutrition Website</h1>
+        </div>
+
+        <div id="nav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Healthy Eating.html">Healthy Eating</a></li>
+                <li><a href="Green Tea.html">Green Tea</a></li>
+                <li><a href="Sleeping Habits.html">Sleeping Habits</a></li>
+                <li><a href="Exercise.html">Exercise</a></li>
+                <li><a href="Healthy Relationships.html">Healthy Relationships</a></li>
+                <li><a class="active" href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+
+        <style>
+    #container
+    {
+        width: 1000px;
+        border: 4px solid rgb(186, 218, 255);
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 40px;
+        text-align: center;
+        margin-top: 2%;
+        background-color: #05628F;
+        background-image: linear-gradient(0deg, #05628F, #01B4FF);
+    }
+
+    img
+    {
+        width: auto;
+        max-width: 800px;
+        height: 600px;
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+button
+{
+    width: 100px;
+    height: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+    @keyframes fadein {
+        from { opacity: 0;}
+        to { opacity: 1; }
+    }
+
+    .play
+    {
+        animation: fadein .4s ease-in;
+    }
+    
+
+        </style>
+
+        <body>
+
+            <div id="container">
+                <h1>Gallery Slideshow</h1>
+                <div id="image">
+                    <img id="img" src="Images/HEALTHY RELEATIONSHIPS Wheel.png" alt="">
+                </div>
+
+                <div id="controls">
+                    <button onclick="GoBack()">Back</button>
+                    <button onclick="GoNext()">Next</button>
+                </div>
+
+            </div>
+
+
+            <script>
+
+            var num  = 1;
+            var element = document.getElementById("img");
+
+            function GoBack()
+            {
+                if(num > 1)
+                {
+                    num--;
+                }
+                else
+                {
+                    num = 6;
+                }
+                PlayAnimation();
+            }
+
+            function GoNext()
+            {
+                if(num < 6)
+                {
+                    num++;
+                }
+                else
+                {
+                    num = 1;
+                }
+                PlayAnimation();
+            }
+
+            function PlayAnimation()
+            {
+                element.src = "slides/"+num+".png";
+                element.classList.remove("play"); // reset the animation
+                void element.offsetWidth; // trigger the reflow of img tag 
+                element.classList.add("play");
+            }
+
+            </script>
+
+
+
+        </body>
+
+
+
+
+        <div id="footer">
+            <a href="Home.html">Home</a>  |  <a 
+            href="Healthy Eating.html">Healthy Eating</a>  |  <a
+            href="Green Tea.html">Green Tea</a>  |  <a 
+            href="Sleeping Habits.html">Sleeping Habits</a>  |  <a 
+            href="Exercise.html">Exercise</a>  |  <a 
+            href="Healthy Relationships.html">Healthy Relationships</a>  |  <a 
+            href="Gallery.html">Gallery</a>  |  <a 
+            href="Contact.html">Contact Us</a>
+        </div>
+     </div>
+</body>
+
+
+
+
+</html>
